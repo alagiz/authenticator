@@ -9,13 +9,13 @@ import './App.css';
 const {Header, Content, Footer} = Layout;
 const FormItem = Form.Item;
 
-const authService = `http://${window.location.hostname}:3001/authenticate`
+const authService = `http://${window.location.hostname}:3001/authenticate`;
 
 class App extends Component {
   state = {
     jwt: null,
     successfulLogin: null
-  }
+  };
 
   authenticate = values => {
     axios.post(authService, {
@@ -29,7 +29,7 @@ class App extends Component {
       .catch(() => {
         this.setState({jwt: null, successfulLogin: false})
       })
-  }
+  };
 
   onClick = () => {
     this.props.form.validateFields((err, values) => {
@@ -37,7 +37,7 @@ class App extends Component {
         this.authenticate(values)
       }
     });
-  }
+  };
 
   render() {
     const {getFieldDecorator} = this.props.form;
@@ -48,7 +48,7 @@ class App extends Component {
           <div className="success-label"> Great success! Here is your token:</div>
           <div className="success-token"> {this.state.jwt} </div>
         </div> :
-        <div className="error-label"> FUCK OFF, it is a closed party! </div>
+        <div className="error-label"> FUCK OFF, it is a closed party! </div>;
 
     return (
       <Layout className="App">
@@ -105,7 +105,9 @@ class App extends Component {
             </Row>
           </div>
         </Content>
-        <Footer></Footer>
+        <Footer>
+
+        </Footer>
       </Layout>
     );
   }
