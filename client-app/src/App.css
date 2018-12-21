@@ -1,0 +1,153 @@
+.App {
+  background: #f0f2f5;
+  height: 100%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 70px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  background: #4b6cb7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 110px;
+  padding: 20px;
+  text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+#root {
+  height: 100vh;
+}
+
+.page-content {
+  margin: 24px 16px 0px;
+  height: 100%;
+}
+
+.align-right {
+  background: #182848;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 28px;
+  background: white;
+  min-height: 67vh;
+  height: 100%;
+}
+
+.the-form::before {
+  content: '';
+  flex:1;
+}
+
+.the-form {
+  width: 30%;
+}
+
+.ant-steps-item-title {
+  min-width: 120px !important;
+}
+
+.ant-layout-footer {
+  padding: 11px 50px;
+}
+
+.ant-btn {
+  border-radius: 0;
+}
+
+.ant-btn-primary {
+  border-color: #1E3055;
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  background-color: #1E3055;
+  border-color: #1E3055;
+}
+
+.ant-form-item {
+  margin-bottom: 0;
+}
+
+.login-button {
+  background: #1E3055;
+  flex: 1;
+}
+
+.login-form {
+  padding: 1em;
+}
+
+.ant-input {
+  border-radius: 0;
+}
+
+.the-form:before {
+  width: 30%;
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+}
+
+.success-container {
+  display: flex;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.success-token {
+    width: 50vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.success-label {
+  color: #24a821;
+  margin-right: 0.5em;
+}
+
+.error-label {
+  color: red;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.ant-form-item-children {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  margin: 0.3em;
+ }
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

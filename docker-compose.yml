@@ -1,0 +1,26 @@
+version: '3.2'
+services:
+  client-app:
+    build:
+      context: ./client-app
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    command: bash -c "cd client-app && npm start -p 3000 -b '0.0.0.0'"
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    tty: true
+  authentication-service:
+    build:
+      context: ./authentication-service
+      dockerfile: Dockerfile
+    command: bundle exec rails s -p 80 -b '0.0.0.0'
+    volumes:
+      - ./authentication-service:/authentication-service
+      - type: tmpfs
+        target: /authentication-service/tmp/pids/
+    ports:
+      - "3001:80"
