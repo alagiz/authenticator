@@ -1,17 +1,17 @@
 require_relative 'boot'
 
-require "rails"
+require 'rails'
 # Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
+require 'active_model/railtie'
+require 'active_job/railtie'
 # require "active_record/railtie"
 # require "active_storage/engine"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "action_cable/engine"
-require "sprockets/railtie"
-require "rails/test_unit/railtie"
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'action_view/railtie'
+require 'action_cable/engine'
+require 'sprockets/railtie'
+require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -27,10 +27,20 @@ module AuthService
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.before_configuration do
+      env_file = File.join(Rails.root, 'config', 'local_env.yml')
+
+      if File.exist?(env_file)
+        YAML.safe_load(File.open(env_file)).each do |key, value|
+          ENV[key.to_s] = value
+        end
+      end
+    end
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        resource '*', headers: :any, methods: %i[get post options]
       end
     end
   end

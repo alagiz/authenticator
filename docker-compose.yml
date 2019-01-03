@@ -18,9 +18,9 @@ services:
       context: ./authentication-service
       dockerfile: Dockerfile
     command: bundle exec rails s -p 80 -b '0.0.0.0'
-#    volumes:
-#      - ./authentication-service:/authentication-service
-#      - type: tmpfs
-#        target: /authentication-service/tmp/pids/
+    volumes:
+      - ./authentication-service:/authentication-service
+      - type: tmpfs
+        target: /authentication-service/tmp/pids/
     ports:
       - "3001:80"
