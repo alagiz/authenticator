@@ -9,7 +9,9 @@ import './App.css';
 const {Header, Content, Footer} = Layout;
 const FormItem = Form.Item;
 
-const authService = `http://${window.location.hostname}:3001/authenticate`;
+const apiGateway = `http://${window.location.hostname}:3002`;
+// const apiGateway = `http://api-gateway:80`;
+// const apiGateway = `http://192.168.99.100:3002/authenticate`;
 
 class App extends Component {
   state = {
@@ -18,7 +20,7 @@ class App extends Component {
   };
 
   authenticate = values => {
-    axios.post(authService, {
+    axios.post(`${apiGateway}/authenticate`, {
       values
     })
       .then(response => {
@@ -67,8 +69,7 @@ class App extends Component {
                  className="login-form-container">
               <div className="the-form">
                 <Col span={24}>
-                  <Form onSubmit={this.handleSubmit}
-                        className="login-form">
+                  <Form className="login-form">
                     <FormItem>
                       {getFieldDecorator('userName', {
                         rules: [{required: true, message: 'Please input your username!'}],

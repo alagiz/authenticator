@@ -24,3 +24,14 @@ services:
         target: /authentication-service/tmp/pids/
     ports:
       - "3001:80"
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    command: bundle exec rails s -p 80 -b '0.0.0.0'
+    volumes:
+    - ./api-gateway:/api-gateway
+    - type: tmpfs
+      target: /api-gateway/tmp/pids/
+    ports:
+    - "3002:80"

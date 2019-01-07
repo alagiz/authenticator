@@ -7,7 +7,7 @@ class AuthenticateController < ApplicationController
   def create
     result = get_result(params)
 
-    json_response({ message: result }, result[:status])
+    json_response(result[:token], result[:status])
   end
 
   # GET at /authenticate [returns public key]
