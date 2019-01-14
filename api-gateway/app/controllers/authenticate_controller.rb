@@ -18,7 +18,7 @@ class AuthenticateController < ApplicationController
     json_response({ message: { token: token } }, status)
   end
 
-  # GET at /authenticate - tries to get jwt from the authentication service.
+  # GET at /authenticate - tries to get public key from the authentication service.
   # [returns public key if successful]
   def index
     conn = Faraday.new(url: Settings.authentication_service)
