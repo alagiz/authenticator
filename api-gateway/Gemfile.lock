@@ -72,7 +72,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.10)
     config (1.7.1)
       activesupport (>= 3.0)
       deep_merge (~> 1.2.1)
@@ -113,9 +113,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     ffi (1.9.25-x64-mingw32)
-    globalid (0.4.1)
-      activesupport (>= 4.2.0)
-    i18n (1.4.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
     jbuilder (2.8.0)
@@ -134,7 +134,7 @@ GEM
       rake
     mini_mime (1.0.1)
     mini_portile2 (2.6.1)
-    minitest (5.11.3)
+    minitest (5.15.0)
     msgpack (1.2.4)
     msgpack (1.2.4-x64-mingw32)
     multi_json (1.13.1)
